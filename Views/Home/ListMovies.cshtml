@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "See All Movies";
+}
+
+@model IEnumerable<AddMovie>
+ 
+
+<table>
+    <thead>
+        <tr><th>Category</th><th>Title</th><th>Year</th><th>Director</th><th>Rating</th><th>Edited?</th><th>Lent To</th><th>Notes</th><th>Edit</th><th>Delete</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            
+            @if (@x.Title == "Independence Day")
+            {
+            }
+            else
+            {
+                <tr>
+                    <td>@x.Category</td>
+                    <td>@x.Title</td>
+                    <td>@x.Year</td>
+                    <td>@x.Director</td>
+                    <td>@x.Rating</td>
+                    <td>@x.Edited</td>
+                    <td>@x.LentTo</td>
+                    <td>@x.Notes</td>
+                    <td><a asp-action="Edit" asp-route-movieId="@x.MovieID">Edit</a></td>
+                    <td><form asp-action="Delete" method="post">
+                            <input type="hidden" name="movieID" value="@x.MovieID" />
+                            <button type="submit">Delete</button>
+                        </form></td>
+
+                </tr>
+            }
+
+        }
+    </tbody>
+</table>
