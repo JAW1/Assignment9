@@ -30,12 +30,13 @@ namespace Assignment9.Controllers
         {
             return View();
         }
-        //added by me
+        //This is where the movie page is called
         [HttpGet]
         public IActionResult AddMovie()
         {
             return View();
         }
+        //This is where a movie is added
         [HttpPost]
         public IActionResult AddMovie(AddMovie addMovie)
         {
@@ -44,14 +45,17 @@ namespace Assignment9.Controllers
             context.SaveChanges();
             return View("Confirmed", addMovie);
         }
+        //This is where the movies are listed out
         public IActionResult ListMovies()
         {
             return View(context.Movies);
         }
+        //confirmation page for adding files
         public IActionResult Confirmed()
         {
             return View();
         }
+        //show podcast page
         public IActionResult MyPodcasts()
         {
             return View();
@@ -63,6 +67,7 @@ namespace Assignment9.Controllers
             
             return View(movie);
         }
+        //this is where it assigns all the new edits
         [HttpPost]
         public IActionResult Edit(AddMovie movie, int movieId)
         {
@@ -78,7 +83,7 @@ namespace Assignment9.Controllers
             context.SaveChanges();
             return RedirectToAction("ListMovies");
         }
-
+        //this is where a record is deleted
         [HttpPost]
         public IActionResult Delete(int movieID)
         {

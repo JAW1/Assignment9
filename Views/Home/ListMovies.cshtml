@@ -4,7 +4,7 @@
 }
 
 @model IEnumerable<AddMovie>
- 
+ @* This page takes all of the movies from the model and iterates them into a table *@
 <div class="container">
     <table class="table table-striped">
         <thead>
@@ -28,11 +28,12 @@
                         <td>@x.Edited</td>
                         <td>@x.LentTo</td>
                         <td>@x.Notes</td>
+                        @* Here are the edit and delete buttons that are part of the table *@
                         <td><a asp-action="Edit" asp-route-movieId="@x.MovieID">Edit</a></td>
                         <td>
                             <form asp-action="Delete" method="post">
                                 <input type="hidden" name="movieID" value="@x.MovieID" />
-                                <button type="submit">Delete</button>
+                                <button class="alert-danger" type="submit">Delete</button>
                             </form>
                         </td>
 

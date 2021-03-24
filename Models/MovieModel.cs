@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assignment9.Models
 {
+    //this is my model for the movies, with all the needed attributes and categories
     public class AddMovie
     {
         [Key]

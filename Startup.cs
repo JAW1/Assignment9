@@ -28,6 +28,7 @@ namespace Assignment9
             services.AddControllersWithViews();
             services.AddDbContext<MovieContext>(options =>
             {
+                // This is where Sqlite is configured
                 options.UseSqlite(Configuration["ConnectionStrings:MovieListConnection"]);
             });
         }
