@@ -1,7 +1,9 @@
 ﻿@model AddMovie
 @{ 
-    ViewData["Title"] = "Confirmed";
+    ViewData["Title"] = "";
 }
 
-<h2>@Model.Title has been created</h2>
-<a asp-action="ListMovies">See All Movies</a>
+<div class="text-center">
+    <h2>Congratulations! @Model.Title has been added to the movie list!</h2>
+ 
+</div>

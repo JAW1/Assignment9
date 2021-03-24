@@ -2,30 +2,37 @@
 <html lang="en">
 <head>
     <title>@ViewBag.Title - Assignment3</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
 </head>
-<body>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" asp-action="Index">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="ListMovies">Movie List</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="MyPodcasts">My Podcast</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="AddMovie">Add A Movie</a>
+                </li>
 
-    <header>
-        <ul>
-            <li>
-                <a asp-action="Index">Home</a>
-            </li>
-            <li>
-                <a asp-action="ListMovies">Movie List</a>
-            </li>
-            <li>
-                <a asp-action="MyPodcasts">My Podcasts</a>
-            </li>
-            <li>
-                <a asp-action="AddMovie">Add Movie</a>
-            </li>
-            <li>
-                <a asp-action="Privacy">Privacy</a>
-            </li>
-        </ul>
-    </header>
-    <h1>@ViewBag.Title</h1>
+            </ul>
+        </div>
+    </nav>
+    <br />
+    <br />
+    <div class="container"><h1>@ViewBag.Title</h1></div>
+
 
     @RenderBody()
+
+    <br />
+    <br />
+    <br />
 </body>
 </html>
